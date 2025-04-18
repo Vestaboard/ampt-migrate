@@ -1,8 +1,12 @@
 {
   "name": "ampt-migrate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Migrations for Ampt data",
   "main": "lib/index.js",
+  "repository": {
+    "url": "https://github.com/Vestaboard/ampt-migrate",
+    "type": "git"
+  },
   "scripts": {
     "test": "jest",
     "build": "tsc"
