@@ -71,7 +71,7 @@ describe("Migrate", () => {
       const migrationState = await data.get(MIGRATION_STATE_KEY);
 
       expect(dataChanged).toBeUndefined();
-      expect(migrationState).toBeNull();
+      expect(migrationState).toBeUndefined();
     });
   });
 
@@ -99,6 +99,6 @@ describe("Migrate", () => {
     const migrationState = await data.get(MIGRATION_STATE_KEY);
 
     expect(dataChanged).toBeUndefined();
-    expect(migrationState).toBeNull();
+    expect(migrationState).toBeUndefined();
   });
 });

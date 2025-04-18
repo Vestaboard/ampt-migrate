@@ -21,7 +21,7 @@ We recommend adding the following script to your `package.json`:
     ...,
     "scripts": {
         ...,
-        "migrate": "ampt run ampt-migrate"
+        "migrate": "ampt run node_modules/ampt-migrate"
     }
 }
 ```

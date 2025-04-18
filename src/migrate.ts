@@ -75,7 +75,7 @@ const down = async ({
     migrationFiles[migrationFiles.indexOf(migration) - 1];
 
   if (!migration) {
-    await data.set(MIGRATION_STATE_KEY, null);
+    await data.remove(MIGRATION_STATE_KEY);
     return;
   }
 
@@ -83,8 +83,14 @@ const down = async ({
   const migrationInstance = new Migration();
 
   await migrationInstance.down();
-  await data.set(MIGRATION_STATE_KEY, previousMigration || null);
-  console.info(`Migrated down to ${previousMigration} ⬇️`);
+
+  if (previousMigration) {
+    console.info(`Migrated down to ${previousMigration} ⬇️`);
+    await data.set(MIGRATION_STATE_KEY, previousMigration);
+  } else {
+    console.info(`Migrated down to the beginning of your migrations ⬇️`);
+    await data.remove(MIGRATION_STATE_KEY);
+  }
   console.info(`Migration complete 🚀`);
 };
 
