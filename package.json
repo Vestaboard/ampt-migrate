@@ -1,0 +1,37 @@
+{
+  "name": "ampt-migrate",
+  "version": "1.0.0",
+  "description": "Migrations for Ampt data",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "author": "Tyson Cadenhead",
+  "license": "ISC",
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|tsx)",
+      "!/**/*.js",
+      "!/**/*d.ts"
+    ],
+    "testEnvironment": "node",
+    "clearMocks": true
+  },
+  "devDependencies": {
+    "@ampt/data": "^0.0.1-beta.18",
+    "@ampt/sdk": "^1.0.20",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.14.1",
+    "ampt-data-mock": "^1.1.4",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "@ampt/data": "*"
+  }
+}
